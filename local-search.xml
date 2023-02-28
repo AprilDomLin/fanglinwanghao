@@ -22,6 +22,16 @@
     </categories>
     
     
+    <tags>
+      
+      <tag>Note</tag>
+      
+      <tag>python</tag>
+      
+      <tag>pycharm</tag>
+      
+    </tags>
+    
   </entry>
   
   
@@ -31,17 +41,21 @@
     <link href="/fanglinwanghao/2023/02/13/MTS-Mixers/"/>
     <url>/fanglinwanghao/2023/02/13/MTS-Mixers/</url>
     
-    <content type="html"><![CDATA[<h1 id="MTS-Mixers-Multivariate-Time-Series-Forecasting-via-Factorized-Temporal-and-Channel-Mixing"><a href="#MTS-Mixers-Multivariate-Time-Series-Forecasting-via-Factorized-Temporal-and-Channel-Mixing" class="headerlink" title="MTS-Mixers: Multivariate Time Series Forecasting via Factorized Temporal and Channel Mixing"></a>MTS-Mixers: Multivariate Time Series Forecasting via Factorized Temporal and Channel Mixing</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><ul><li><a href="https://arxiv.org/abs/2302.04501"><strong>Arxiv</strong></a></li></ul><h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><h3 id="Harbin-Institute-of-Technology"><a href="#Harbin-Institute-of-Technology" class="headerlink" title="Harbin Institute of Technology"></a><a href="">Harbin Institute of Technology</a></h3><ul><li><p><a href="">Zhe Li</a> : <a href="mailto:&#112;&#108;&#x75;&#x6d;&#50;&#55;&#x31;&#56;&#x32;&#56;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;">&#112;&#108;&#x75;&#x6d;&#50;&#55;&#x31;&#56;&#x32;&#56;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#111;&#x6d;</a></p></li><li><p><a href="">Zenglin Xu</a> : <a href="mailto:&#122;&#x65;&#110;&#103;&#108;&#x69;&#x6e;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#x6d;">&#122;&#x65;&#110;&#103;&#108;&#x69;&#x6e;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#x2e;&#99;&#x6f;&#x6d;</a></p></li></ul><h3 id="Huawei-Technologies"><a href="#Huawei-Technologies" class="headerlink" title="Huawei Technologies"></a><a href="">Huawei Technologies</a></h3><ul><li><p><a href="">Zhongwei Rao</a> : raozhong-<br><a href="mailto:&#x77;&#x65;&#x6e;&#64;&#104;&#x75;&#x61;&#119;&#101;&#105;&#x2e;&#99;&#111;&#109;">&#x77;&#x65;&#x6e;&#64;&#104;&#x75;&#x61;&#119;&#101;&#105;&#x2e;&#99;&#111;&#109;</a></p></li><li><p><a href="">Lujia Pan</a>: <a href="mailto:&#x70;&#97;&#x6e;&#108;&#x75;&#x6a;&#105;&#x61;&#64;&#104;&#x75;&#x61;&#x77;&#x65;&#x69;&#46;&#99;&#x6f;&#109;">&#x70;&#97;&#x6e;&#108;&#x75;&#x6a;&#105;&#x61;&#64;&#104;&#x75;&#x61;&#x77;&#x65;&#x69;&#46;&#99;&#x6f;&#109;</a></p></li></ul><h2 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p>⭐ Multivariate Time Series Forecasting(MTSF)</p><p>⭐ </p><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><h3 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h3><h2 id="Achievements"><a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h2><ul><li><p>Propose a general framework MTS-Mixers for MTSF.<br><img src="/fanglinwanghao/img/MTS_Mixers/figure_01.png"><center>Fig.1: Illustration of the basic linear model.</center></p></li><li><p>Investigate the contribution and deficiencies of attention mechanisms on the performance of time series forecasting.</p></li><li><p>Propose the temporal and channel factorization strategies leveraging the low rank property of time series data.</p></li></ul><br />Disclaimer: The above contents are taken from literature or internet without malicious tampering.<hr><br /><h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2><h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="MTS-Mixers-Multivariate-Time-Series-Forecasting-via-Factorized-Temporal-and-Channel-Mixing"><a href="#MTS-Mixers-Multivariate-Time-Series-Forecasting-via-Factorized-Temporal-and-Channel-Mixing" class="headerlink" title="MTS-Mixers: Multivariate Time Series Forecasting via Factorized Temporal and Channel Mixing"></a>MTS-Mixers: Multivariate Time Series Forecasting via Factorized Temporal and Channel Mixing</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><ul><li><a href="https://arxiv.org/abs/2302.04501"><strong>Arxiv</strong></a></li></ul><h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><h3 id="Harbin-Institute-of-Technology"><a href="#Harbin-Institute-of-Technology" class="headerlink" title="Harbin Institute of Technology"></a><a href="">Harbin Institute of Technology</a></h3><ul><li><p><a href="">Zhe Li</a> : <a href="mailto:&#x70;&#108;&#x75;&#109;&#x32;&#x37;&#x31;&#56;&#x32;&#56;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x70;&#108;&#x75;&#109;&#x32;&#x37;&#x31;&#56;&#x32;&#56;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></p></li><li><p><a href="">Zenglin Xu</a> : <a href="mailto:&#122;&#x65;&#x6e;&#103;&#x6c;&#x69;&#110;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#111;&#109;">&#122;&#x65;&#x6e;&#103;&#x6c;&#x69;&#110;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#111;&#109;</a></p></li></ul><h3 id="Huawei-Technologies"><a href="#Huawei-Technologies" class="headerlink" title="Huawei Technologies"></a><a href="">Huawei Technologies</a></h3><ul><li><p><a href="">Zhongwei Rao</a> : raozhong-<br><a href="mailto:&#119;&#x65;&#110;&#64;&#104;&#x75;&#x61;&#x77;&#101;&#105;&#x2e;&#x63;&#x6f;&#109;">&#119;&#x65;&#110;&#64;&#104;&#x75;&#x61;&#x77;&#101;&#105;&#x2e;&#x63;&#x6f;&#109;</a></p></li><li><p><a href="">Lujia Pan</a>: <a href="mailto:&#x70;&#x61;&#x6e;&#x6c;&#x75;&#x6a;&#x69;&#x61;&#64;&#x68;&#117;&#x61;&#x77;&#101;&#x69;&#46;&#99;&#x6f;&#109;">&#x70;&#x61;&#x6e;&#x6c;&#x75;&#x6a;&#x69;&#x61;&#64;&#x68;&#117;&#x61;&#x77;&#101;&#x69;&#46;&#99;&#x6f;&#109;</a></p></li></ul><h2 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p>⭐ Multivariate Time Series Forecasting(MTSF)</p><p>⭐ </p><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><h3 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h3><h2 id="Achievements"><a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h2><ul><li><p>Propose a general framework MTS-Mixers for MTSF.<br><img src="/fanglinwanghao/img/MTS_Mixers/figure_01.png"><center>Fig.1: Illustration of the basic linear model.</center></p></li><li><p>Investigate the contribution and deficiencies of attention mechanisms on the performance of time series forecasting.</p></li><li><p>Propose the temporal and channel factorization strategies leveraging the low rank property of time series data.</p></li></ul><br />Disclaimer: The above contents are taken from literature or internet without malicious tampering.<hr><br /><h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2><h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2>]]></content>
     
     
     <categories>
       
       <category>Reference</category>
       
-      <category>Note</category>
-      
     </categories>
     
+    
+    <tags>
+      
+      <tag>Reference</tag>
+      
+    </tags>
     
   </entry>
   
@@ -59,12 +73,18 @@
       
       <category>Reference</category>
       
-      <category>Note</category>
-      
       <category>Linear</category>
       
     </categories>
     
+    
+    <tags>
+      
+      <tag>Reference</tag>
+      
+      <tag>Linear</tag>
+      
+    </tags>
     
   </entry>
   
@@ -82,12 +102,18 @@
       
       <category>Reference</category>
       
-      <category>Note</category>
-      
       <category>Attention</category>
       
     </categories>
     
+    
+    <tags>
+      
+      <tag>Reference</tag>
+      
+      <tag>Attention</tag>
+      
+    </tags>
     
   </entry>
   
@@ -130,14 +156,20 @@
       
       <category>Reference</category>
       
-      <category>Note</category>
-      
       <category>Transformer</category>
-      
-      <category>weather forecast</category>
       
     </categories>
     
+    
+    <tags>
+      
+      <tag>Reference</tag>
+      
+      <tag>Transformer</tag>
+      
+      <tag>Weather forecast</tag>
+      
+    </tags>
     
   </entry>
   
@@ -155,14 +187,20 @@
       
       <category>Reference</category>
       
-      <category>Note</category>
-      
       <category>TCN</category>
-      
-      <category>TSF</category>
       
     </categories>
     
+    
+    <tags>
+      
+      <tag>Reference</tag>
+      
+      <tag>TCN</tag>
+      
+      <tag>TSF</tag>
+      
+    </tags>
     
   </entry>
   
