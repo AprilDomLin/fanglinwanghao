@@ -210,5 +210,30 @@
   
   
   
+  <entry>
+    <title>Neural Ordinary Differential Equations(NODE)</title>
+    <link href="/fanglinwanghao/2023/01/27/NODE/"/>
+    <url>/fanglinwanghao/2023/01/27/NODE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Reduced-order-Model-for-Fluid-Flows-via-Neural-Ordinary-Differential-Equations"><a href="#Reduced-order-Model-for-Fluid-Flows-via-Neural-Ordinary-Differential-Equations" class="headerlink" title="Reduced-order Model for Fluid Flows via Neural Ordinary Differential Equations"></a>Reduced-order Model for Fluid Flows via Neural Ordinary Differential Equations</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><ul><li><a href="https://arxiv.org/abs/2102.02248"><strong>Arxiv</strong></a></li><li><a href="https://github.com/CarlosJose126/NeuralODE-ROM"><strong>Github</strong></a></li></ul><h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><h3 id=""><a href="#" class="headerlink" title=""></a><a href=""></a></h3><ul><li><p><a href="">Carlos J.G. Rojas</a> : First author</p></li><li><p><a href="">Andreas Dengel</a> :</p></li><li><p><a href="">Mateus Dias Ribeiro</a> :</p></li></ul><h2 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p>⭐ </p><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><p>* </p><h3 id="Neural-Network-Type"><a href="#Neural-Network-Type" class="headerlink" title="Neural Network Type"></a>Neural Network Type</h3><p>- </p><h2 id="Achievements"><a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h2><p>* </p><p>* </p><br />Disclaimer: The above contents are taken from literature or internet without malicious tampering.<hr><br /><h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>Reference</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Reference</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
   
 </search>
