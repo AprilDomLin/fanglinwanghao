@@ -13,24 +13,31 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Fang Linwanghao">
+  <meta name="author" content="方璘王昊">
   <meta name="keywords" content="">
   
-    <meta name="description" content="家乡 &#x2F; Hometown: 四川省乐山市 &#x2F; Leshan City, Sichuan Province, China  生日 &#x2F; Birthday: 1996.08.02  简历 &#x2F; Curriculum Vitae">
-<meta property="og:type" content="website">
-<meta property="og:title" content="About Me">
-<meta property="og:url" content="https://aprildomlin.github.io/fanglinwanghao/about/index.html">
+    <meta name="description" content="Transfer SSH with tunnelBackgroudWe ususally encounter a problem that we cannot access a server without an internet connection, but we can connet it through a local area network. However, some IDEs, s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Transfer SSH with tunnel">
+<meta property="og:url" content="https://aprildomlin.github.io/fanglinwanghao/2023/02/01/note/ssh_tunnel/index.html">
 <meta property="og:site_name" content="Fang Linwanghao">
-<meta property="og:description" content="家乡 &#x2F; Hometown: 四川省乐山市 &#x2F; Leshan City, Sichuan Province, China  生日 &#x2F; Birthday: 1996.08.02  简历 &#x2F; Curriculum Vitae">
+<meta property="og:description" content="Transfer SSH with tunnelBackgroudWe ususally encounter a problem that we cannot access a server without an internet connection, but we can connet it through a local area network. However, some IDEs, s">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2023-01-27T08:12:40.000Z">
-<meta property="article:modified_time" content="2023-03-02T14:00:30.824Z">
+<meta property="og:image" content="https://aprildomlin.github.io/fanglinwanghao/img/ssh_tunnel/fig_01.png">
+<meta property="og:image" content="https://aprildomlin.github.io/fanglinwanghao/img/ssh_tunnel/fig_02.png">
+<meta property="og:image" content="https://aprildomlin.github.io/fanglinwanghao/img/ssh_tunnel/fig_03.png">
+<meta property="article:published_time" content="2023-02-01T08:12:40.000Z">
+<meta property="article:modified_time" content="2023-03-03T03:28:57.461Z">
 <meta property="article:author" content="Fang Linwanghao">
+<meta property="article:tag" content="Note">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="transfer">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://aprildomlin.github.io/fanglinwanghao/img/ssh_tunnel/fig_01.png">
   
   
   
-  <title>About Me - Fang Linwanghao</title>
+  <title>Transfer SSH with tunnel - Fang Linwanghao</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -90,7 +97,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 60vh;">
+<div class="header-inner" style="height: 70vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/fanglinwanghao/">
@@ -184,9 +191,54 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="About Me"></span>
+            <span id="subtitle" data-typed-text="Transfer SSH with tunnel"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        方璘王昊
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-02-01 16:12" pubdate>
+          February 1, 2023 pm
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.6k words
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          14 mins
+        
+      </span>
+    
+
+    
+    
+  </div>
+
 
         
       </div>
@@ -202,83 +254,205 @@
 
   <main>
     
-      <div class="container nopadding-x-md">
-        <div id="board"
-          >
-          
-            <div class="about-avatar">
-              <img src="/fanglinwanghao/img/profile.jpg" srcset="/fanglinwanghao/img/loading.gif" lazyload class="img-fluid" alt="avatar">
-            </div>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center">
-  <div class="about-info">
-    <div class="about-name">方璘王昊</div>
-    <div class="about-intro">Please contact me if you have any questions that I can answer for you.</div>
-    <div class="about-icons">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
       
-        
-        
-        
-        <a href=https://github.com/AprilDomLin class="
-           hint--bottom hint--rounded"
-           aria-label=GitHub
-           target="_blank"
-        >
-          <i class="iconfont icon-github-fill" aria-hidden="true"></i>
-          
-        </a>
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Transfer SSH with tunnel</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="Transfer-SSH-with-tunnel"><a href="#Transfer-SSH-with-tunnel" class="headerlink" title="Transfer SSH with tunnel"></a>Transfer SSH with tunnel</h1><h2 id="Backgroud"><a href="#Backgroud" class="headerlink" title="Backgroud"></a>Backgroud</h2><p>We ususally encounter a problem that we cannot access a server without an internet connection, but we can connet it through a local area network. However, some IDEs, such as PyCharm, can only connect to a serer throught Host &amp; Port &amp; Username &amp; Password and cannot directly connect to an intranet server that requires a server jump. Therefore, we need to use a jump server to build a tunnel and solve the problem of IDE unable to directly connect to an intranet server.</p>
+<h2 id="Mthodology"><a href="#Mthodology" class="headerlink" title="Mthodology"></a>Mthodology</h2><p>First of all, we need to set up a tunnel through a server that has access to both the intranet server and the internet. With the jump server, we can directly SSH to the intranet server without the need for a second SSH.</p>
+<h3 id="Set-Up-Connection"><a href="#Set-Up-Connection" class="headerlink" title="Set Up Connection"></a>Set Up Connection</h3><p>Set up connection to a jump server on usual. Input the host&#x2F;IP and port of the jump server, and connect it with username and passowrd of the jump server.<br><img src="/fanglinwanghao/img/ssh_tunnel/fig_01.png" srcset="/fanglinwanghao/img/loading.gif" lazyload></p>
+<center>Fig.1: Jump Server Connection.</center>
+
+<h3 id="Build-Tunnel"><a href="#Build-Tunnel" class="headerlink" title="Build Tunnel"></a>Build Tunnel</h3><ol>
+<li><p>Choose tunnel setting.</p>
+</li>
+<li><p>Set the <strong>listening port</strong> of the local host, which is defined by yourself but must be unused and less than 65535, such as <strong>6142</strong>.[Sueggestion: larger than 1024]</p>
+</li>
+<li><p>Input the host&#x2F;IP and ssh port of the intranet server to finish building.</p>
+</li>
+</ol>
+<p><img src="/fanglinwanghao/img/ssh_tunnel/fig_02.png" srcset="/fanglinwanghao/img/loading.gif" lazyload></p>
+<center>Fig.2: Building a tunnel with jump server.</center>
+
+
+<p>Now, we need to keep the connection to the jump server through XShell, preferably by using the command <strong>top</strong> to maintain a continuous connection. At this point, we can directly access the intranet server through SSH.</p>
+<h3 id="Add-intranet-SSH-interpreter-in-PyCharm"><a href="#Add-intranet-SSH-interpreter-in-PyCharm" class="headerlink" title="Add intranet SSH interpreter in PyCharm"></a>Add intranet SSH interpreter in PyCharm</h3><p>We can set the intranet server configuration to add python interpreter. </p>
+<ol>
+<li><p>Input the host&#x2F;IP of the intranet server.</p>
+</li>
+<li><p>Input the port that was defined by yourself, being same with the <strong>listening port</strong>.</p>
+</li>
+<li><p>Input username of the intranet, and click on the <strong>next</strong>.</p>
+</li>
+<li><p>Input password of the intranet to build connection.</p>
+</li>
+<li><p>Then, you can add the SSH interpreter on intranet server.</p>
+</li>
+</ol>
+<p><img src="/fanglinwanghao/img/ssh_tunnel/fig_03.png" srcset="/fanglinwanghao/img/loading.gif" lazyload></p>
+<center>Fig.3: Adding intranet SSH interpreter in PyCharm.</center>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
       
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
         
-        
-        
-        <a href=https://www.zhihu.com/people/frank-11-74-29 class="
-           hint--bottom hint--rounded"
-           aria-label=知乎
-           target="_blank"
-        >
-          <i class="iconfont icon-zhihu-fill" aria-hidden="true"></i>
-          
-        </a>
+  <a href="/fanglinwanghao/categories/Note/" class="category-chain-item">Note</a>
+  
+  
+    <span>></span>
+    
+  <a href="/fanglinwanghao/categories/Note/linux/" class="category-chain-item">linux</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
       
-        
-        
-        
-        <a  class="qr-trigger
-           "
-           
-           target="_self"
-        >
-          <i class="iconfont icon-wechat-fill" aria-hidden="true"></i>
-          
-            <img class="qr-img" src="/fanglinwanghao/img/april_wechat.jpg" srcset="/fanglinwanghao/img/loading.gif" lazyload alt="qrcode" />
-          
-        </a>
+        <a href="/fanglinwanghao/tags/Note/">#Note</a>
       
+        <a href="/fanglinwanghao/tags/linux/">#linux</a>
+      
+        <a href="/fanglinwanghao/tags/transfer/">#transfer</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>Transfer SSH with tunnel</div>
+      <div>https://aprildomlin.github.io/fanglinwanghao/2023/02/01/note/ssh_tunnel/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>Author</div>
+          <div>方璘王昊</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>Posted on</div>
+          <div>February 1, 2023</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>Licensed under</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - Attribution">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/fanglinwanghao/2023/02/01/MetNet2/" title="MetNet-2">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">MetNet-2</span>
+                        <span class="visible-mobile">Previous</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/fanglinwanghao/2023/01/29/Pangu_Weather/" title="Pangu-Weather">
+                        <span class="hidden-mobile">Pangu-Weather</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>Table of Contents</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
     </div>
   </div>
 </div>
 
-<article class="about-content page-content mt-5">
-  <div class="markdown-body">
-    <ul>
-<li><p><strong>家乡 &#x2F; Hometown</strong>: 四川省乐山市 &#x2F; Leshan City, Sichuan Province, China</p>
-</li>
-<li><p><strong>生日 &#x2F; Birthday</strong>: 1996.08.02</p>
-</li>
-<li><p><a href="https://github.com/AprilDomLin/fanglinwanghao/blob/gh-pages/pdf/fanglinwanghao.pdf" target="_blank"><strong>简历</strong></a> &#x2F; <a href="https://github.com/AprilDomLin/fanglinwanghao/blob/gh-pages/pdf/fanglinwanghao_cv.pdf" target="_blank"><strong>Curriculum Vitae</strong></a></p>
-</li>
-</ul>
-
-  </div>
-
-  
-</article>
-
 
 
 
@@ -305,11 +479,8 @@
 
 
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
     
 
     
@@ -402,6 +573,46 @@
   
 
 
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
 
 
   <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>

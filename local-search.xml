@@ -149,6 +149,37 @@
   
   
   <entry>
+    <title>Transfer SSH with tunnel</title>
+    <link href="/fanglinwanghao/2023/02/01/note/ssh_tunnel/"/>
+    <url>/fanglinwanghao/2023/02/01/note/ssh_tunnel/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Transfer-SSH-with-tunnel"><a href="#Transfer-SSH-with-tunnel" class="headerlink" title="Transfer SSH with tunnel"></a>Transfer SSH with tunnel</h1><h2 id="Backgroud"><a href="#Backgroud" class="headerlink" title="Backgroud"></a>Backgroud</h2><p>We ususally encounter a problem that we cannot access a server without an internet connection, but we can connet it through a local area network. However, some IDEs, such as PyCharm, can only connect to a serer throught Host &amp; Port &amp; Username &amp; Password and cannot directly connect to an intranet server that requires a server jump. Therefore, we need to use a jump server to build a tunnel and solve the problem of IDE unable to directly connect to an intranet server.</p><h2 id="Mthodology"><a href="#Mthodology" class="headerlink" title="Mthodology"></a>Mthodology</h2><p>First of all, we need to set up a tunnel through a server that has access to both the intranet server and the internet. With the jump server, we can directly SSH to the intranet server without the need for a second SSH.</p><h3 id="Set-Up-Connection"><a href="#Set-Up-Connection" class="headerlink" title="Set Up Connection"></a>Set Up Connection</h3><p>Set up connection to a jump server on usual. Input the host&#x2F;IP and port of the jump server, and connect it with username and passowrd of the jump server.<br><img src="/fanglinwanghao/img/ssh_tunnel/fig_01.png"></p><center>Fig.1: Jump Server Connection.</center><h3 id="Build-Tunnel"><a href="#Build-Tunnel" class="headerlink" title="Build Tunnel"></a>Build Tunnel</h3><ol><li><p>Choose tunnel setting.</p></li><li><p>Set the <strong>listening port</strong> of the local host, which is defined by yourself but must be unused and less than 65535, such as <strong>6142</strong>.[Sueggestion: larger than 1024]</p></li><li><p>Input the host&#x2F;IP and ssh port of the intranet server to finish building.</p></li></ol><p><img src="/fanglinwanghao/img/ssh_tunnel/fig_02.png"></p><center>Fig.2: Building a tunnel with jump server.</center><p>Now, we need to keep the connection to the jump server through XShell, preferably by using the command <strong>top</strong> to maintain a continuous connection. At this point, we can directly access the intranet server through SSH.</p><h3 id="Add-intranet-SSH-interpreter-in-PyCharm"><a href="#Add-intranet-SSH-interpreter-in-PyCharm" class="headerlink" title="Add intranet SSH interpreter in PyCharm"></a>Add intranet SSH interpreter in PyCharm</h3><p>We can set the intranet server configuration to add python interpreter. </p><ol><li><p>Input the host&#x2F;IP of the intranet server.</p></li><li><p>Input the port that was defined by yourself, being same with the <strong>listening port</strong>.</p></li><li><p>Input username of the intranet, and click on the <strong>next</strong>.</p></li><li><p>Input password of the intranet to build connection.</p></li><li><p>Then, you can add the SSH interpreter on intranet server.</p></li></ol><p><img src="/fanglinwanghao/img/ssh_tunnel/fig_03.png"></p><center>Fig.3: Adding intranet SSH interpreter in PyCharm.</center>]]></content>
+    
+    
+    <categories>
+      
+      <category>Note</category>
+      
+      <category>linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Note</tag>
+      
+      <tag>linux</tag>
+      
+      <tag>transfer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Pangu-Weather</title>
     <link href="/fanglinwanghao/2023/01/29/Pangu_Weather/"/>
     <url>/fanglinwanghao/2023/01/29/Pangu_Weather/</url>
