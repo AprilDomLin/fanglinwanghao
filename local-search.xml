@@ -5,8 +5,8 @@
   
   <entry>
     <title>Pycharm Remote</title>
-    <link href="/fanglinwanghao/2023/02/28/pycharm/"/>
-    <url>/fanglinwanghao/2023/02/28/pycharm/</url>
+    <link href="/fanglinwanghao/2023/02/28/note/pycharm/"/>
+    <url>/fanglinwanghao/2023/02/28/note/pycharm/</url>
     
     <content type="html"><![CDATA[<h1 id="Pycharm-Remote"><a href="#Pycharm-Remote" class="headerlink" title="Pycharm + Remote"></a>Pycharm + Remote</h1><h2 id="Pycharm-Professional"><a href="#Pycharm-Professional" class="headerlink" title="Pycharm Professional"></a>Pycharm Professional</h2><h3 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h3><p>需要下载 2021.02 版本或更低版本的 professional pycharm. <a href="https://www.jetbrains.com/pycharm/download/other.html">官网下载链接</a></p><h3 id="Evaluate"><a href="#Evaluate" class="headerlink" title="Evaluate"></a>Evaluate</h3><ol><li><p>下载安装后，会有30天的免费试用期。试用免费试用，进入pycharm professional。</p></li><li><p>点击 setting (快捷键: ctrl + atl + s)，进入插件(Plugins)，点击设置按钮，管理插件仓库(Manage Plugin Repositories)。</p></li></ol><p><img src="/fanglinwanghao/img/pycharm/fig_01.png"></p><p>在仓库源中，加入 <strong><a href="https://plugins.zhile.io/">https://plugins.zhile.io</a></strong><br><img src="/fanglinwanghao/img/pycharm/fig_08.png"></p><ol start="3"><li>加入源完成后，在市场(Marketplace)中，搜索 <strong>IDE Eval Reset</strong>，并下载。</li></ol><p><img src="/fanglinwanghao/img/pycharm/fig_02.png"></p><ol start="4"><li>设置免费试用重置，reload和reset，即可重置免费期限。<br><strong>！！！注意：超过30天未登陆，可能无法启动重置！！！</strong></li></ol><p><img src="/fanglinwanghao/img/pycharm/fig_03.png"></p><h2 id="Remote-远程"><a href="#Remote-远程" class="headerlink" title="Remote 远程"></a>Remote 远程</h2><h3 id="Path-of-Server-Interpreter"><a href="#Path-of-Server-Interpreter" class="headerlink" title="Path of Server Interpreter"></a>Path of Server Interpreter</h3><p>需要确认远程服务器的python环境，若服务器是anaconda环境，则需要寻找到 .&#x2F;anaconda&#x2F;bin&#x2F;python3.X.exe 的路径(path)</p><h3 id="New-Project"><a href="#New-Project" class="headerlink" title="New Project"></a>New Project</h3><p><img src="/fanglinwanghao/img/pycharm/fig_04.png"></p><p>点击新建项目(New Project), 选择纯python项目(Pure Python)。新建python项目</p><h4 id="Interpreter"><a href="#Interpreter" class="headerlink" title="Interpreter"></a>Interpreter</h4><p>解释器是指 python 的解释器环境。若未配制远程解释器地址，则点就…，进行新建配制。</p><ol><li><p>选择 SSH Interpreter， 在New server configuration中，填写服务器地址(Host)、端口(Port)和用户名(Username)<br> <img src="/fanglinwanghao/img/pycharm/fig_05.png"></p></li><li><p>下一步需要输入用户名密码</p></li><li><p>再选择python环境地址，在前序中提及的path。</p></li><li><p>即可完成解释器配制。</p></li></ol><h4 id="Remote-project-location"><a href="#Remote-project-location" class="headerlink" title="Remote project location"></a>Remote project location</h4><p>配制远程路径(Remote project location)，此路径为python项目在远程服务器中的地址路径。</p><h4 id="Location"><a href="#Location" class="headerlink" title="Location"></a>Location</h4><p>配制本地项目路径(Location)，此路径为python项目在本地电脑中的地址路径。</p><h3 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h3><p>在顶部菜单栏中，选择工具(Tools) -&gt; 部署(Deployment)，可以选择自动上传代码(Automatic Upload)——即实时传输本地python代码至远程服务器更新。<br><img src="/fanglinwanghao/img/pycharm/fig_06.png"></p><p>也可在Deployment中，选择Browse Remote Host，即可在右侧面板查看远程路径情况。项目所在目录，会有绿色背景高亮提示。若存在问题，可通过上侧 … ，对远程配制信息进行查看和修改。<br><img src="/fanglinwanghao/img/pycharm/fig_07.png"></p><p>也可以针对单个文件&#x2F;文件夹，右击选择上传(Upload to <em>@</em>.<em>.</em>)，达到随时上传更新文件。</p>]]></content>
     
@@ -38,10 +38,10 @@
   
   <entry>
     <title>MTS-Mixers</title>
-    <link href="/fanglinwanghao/2023/02/13/MTS-Mixers/"/>
-    <url>/fanglinwanghao/2023/02/13/MTS-Mixers/</url>
+    <link href="/fanglinwanghao/2023/02/13/reference/MTS-Mixers/"/>
+    <url>/fanglinwanghao/2023/02/13/reference/MTS-Mixers/</url>
     
-    <content type="html"><![CDATA[<h1 id="MTS-Mixers-Multivariate-Time-Series-Forecasting-via-Factorized-Temporal-and-Channel-Mixing"><a href="#MTS-Mixers-Multivariate-Time-Series-Forecasting-via-Factorized-Temporal-and-Channel-Mixing" class="headerlink" title="MTS-Mixers: Multivariate Time Series Forecasting via Factorized Temporal and Channel Mixing"></a>MTS-Mixers: Multivariate Time Series Forecasting via Factorized Temporal and Channel Mixing</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><ul><li><a href="https://arxiv.org/abs/2302.04501"><strong>Arxiv</strong></a></li></ul><h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><h3 id="Harbin-Institute-of-Technology"><a href="#Harbin-Institute-of-Technology" class="headerlink" title="Harbin Institute of Technology"></a><a href="">Harbin Institute of Technology</a></h3><ul><li><p><a href="">Zhe Li</a> : <a href="mailto:&#x70;&#108;&#x75;&#109;&#x32;&#x37;&#x31;&#56;&#x32;&#56;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;">&#x70;&#108;&#x75;&#109;&#x32;&#x37;&#x31;&#56;&#x32;&#56;&#x40;&#x67;&#109;&#97;&#x69;&#x6c;&#46;&#x63;&#x6f;&#x6d;</a></p></li><li><p><a href="">Zenglin Xu</a> : <a href="mailto:&#122;&#x65;&#x6e;&#103;&#x6c;&#x69;&#110;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#111;&#109;">&#122;&#x65;&#x6e;&#103;&#x6c;&#x69;&#110;&#64;&#103;&#x6d;&#x61;&#105;&#108;&#46;&#x63;&#111;&#109;</a></p></li></ul><h3 id="Huawei-Technologies"><a href="#Huawei-Technologies" class="headerlink" title="Huawei Technologies"></a><a href="">Huawei Technologies</a></h3><ul><li><p><a href="">Zhongwei Rao</a> : raozhong-<br><a href="mailto:&#119;&#x65;&#110;&#64;&#104;&#x75;&#x61;&#x77;&#101;&#105;&#x2e;&#x63;&#x6f;&#109;">&#119;&#x65;&#110;&#64;&#104;&#x75;&#x61;&#x77;&#101;&#105;&#x2e;&#x63;&#x6f;&#109;</a></p></li><li><p><a href="">Lujia Pan</a>: <a href="mailto:&#x70;&#x61;&#x6e;&#x6c;&#x75;&#x6a;&#x69;&#x61;&#64;&#x68;&#117;&#x61;&#x77;&#101;&#x69;&#46;&#99;&#x6f;&#109;">&#x70;&#x61;&#x6e;&#x6c;&#x75;&#x6a;&#x69;&#x61;&#64;&#x68;&#117;&#x61;&#x77;&#101;&#x69;&#46;&#99;&#x6f;&#109;</a></p></li></ul><h2 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p>⭐ Multivariate Time Series Forecasting(MTSF)</p><p>⭐ </p><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><h3 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h3><h2 id="Achievements"><a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h2><ul><li><p>Propose a general framework MTS-Mixers for MTSF.<br><img src="/fanglinwanghao/img/MTS_Mixers/figure_01.png"><center>Fig.1: Illustration of the basic linear model.</center></p></li><li><p>Investigate the contribution and deficiencies of attention mechanisms on the performance of time series forecasting.</p></li><li><p>Propose the temporal and channel factorization strategies leveraging the low rank property of time series data.</p></li></ul><br />Disclaimer: The above contents are taken from literature or internet without malicious tampering.<hr><br /><h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2><h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="MTS-Mixers-Multivariate-Time-Series-Forecasting-via-Factorized-Temporal-and-Channel-Mixing"><a href="#MTS-Mixers-Multivariate-Time-Series-Forecasting-via-Factorized-Temporal-and-Channel-Mixing" class="headerlink" title="MTS-Mixers: Multivariate Time Series Forecasting via Factorized Temporal and Channel Mixing"></a>MTS-Mixers: Multivariate Time Series Forecasting via Factorized Temporal and Channel Mixing</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><ul><li><a href="https://arxiv.org/abs/2302.04501"><strong>Arxiv</strong></a></li></ul><h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><h3 id="Harbin-Institute-of-Technology"><a href="#Harbin-Institute-of-Technology" class="headerlink" title="Harbin Institute of Technology"></a><a href="">Harbin Institute of Technology</a></h3><ul><li><p><a href="">Zhe Li</a> : <a href="mailto:&#x70;&#x6c;&#x75;&#109;&#50;&#x37;&#49;&#56;&#x32;&#x38;&#64;&#x67;&#109;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;">&#x70;&#x6c;&#x75;&#109;&#50;&#x37;&#49;&#56;&#x32;&#x38;&#64;&#x67;&#109;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#x6d;</a></p></li><li><p><a href="">Zenglin Xu</a> : <a href="mailto:&#122;&#101;&#110;&#x67;&#x6c;&#x69;&#x6e;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#111;&#109;">&#122;&#101;&#110;&#x67;&#x6c;&#x69;&#x6e;&#x40;&#x67;&#x6d;&#x61;&#105;&#108;&#x2e;&#99;&#111;&#109;</a></p></li></ul><h3 id="Huawei-Technologies"><a href="#Huawei-Technologies" class="headerlink" title="Huawei Technologies"></a><a href="">Huawei Technologies</a></h3><ul><li><p><a href="">Zhongwei Rao</a> : raozhong-<br><a href="mailto:&#119;&#x65;&#110;&#x40;&#104;&#x75;&#97;&#x77;&#x65;&#x69;&#46;&#99;&#111;&#109;">&#119;&#x65;&#110;&#x40;&#104;&#x75;&#97;&#x77;&#x65;&#x69;&#46;&#99;&#111;&#109;</a></p></li><li><p><a href="">Lujia Pan</a>: <a href="mailto:&#112;&#97;&#x6e;&#108;&#x75;&#x6a;&#x69;&#97;&#x40;&#104;&#117;&#97;&#119;&#x65;&#105;&#x2e;&#99;&#111;&#x6d;">&#112;&#97;&#x6e;&#108;&#x75;&#x6a;&#x69;&#97;&#x40;&#104;&#117;&#97;&#119;&#x65;&#105;&#x2e;&#99;&#111;&#x6d;</a></p></li></ul><h2 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p>⭐ Multivariate Time Series Forecasting(MTSF)</p><p>⭐ </p><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><h3 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h3><h2 id="Achievements"><a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h2><ul><li><p>Propose a general framework MTS-Mixers for MTSF.<br><img src="/fanglinwanghao/img/MTS_Mixers/figure_01.png"><center>Fig.1: Illustration of the basic linear model.</center></p></li><li><p>Investigate the contribution and deficiencies of attention mechanisms on the performance of time series forecasting.</p></li><li><p>Propose the temporal and channel factorization strategies leveraging the low rank property of time series data.</p></li></ul><br />Disclaimer: The above contents are taken from literature or internet without malicious tampering.<hr><br /><h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2><h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2>]]></content>
     
     
     <categories>
@@ -63,8 +63,8 @@
   
   <entry>
     <title>NLinear</title>
-    <link href="/fanglinwanghao/2023/02/13/Nlinear/"/>
-    <url>/fanglinwanghao/2023/02/13/Nlinear/</url>
+    <link href="/fanglinwanghao/2023/02/13/reference/Nlinear/"/>
+    <url>/fanglinwanghao/2023/02/13/reference/Nlinear/</url>
     
     <content type="html"><![CDATA[<h1 id="Are-Transformers-Effective-for-Time-Series-Forecasting"><a href="#Are-Transformers-Effective-for-Time-Series-Forecasting" class="headerlink" title="Are Transformers Effective for Time Series Forecasting?"></a>Are Transformers Effective for Time Series Forecasting?</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><ul><li><a href="https://github.com/cure-lab/LTSF-Linear"><strong>Github</strong></a></li><li><a href="https://arxiv.org/abs/2205.13504"><strong>Arxiv</strong></a></li></ul><h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><h3 id="CUhk-REliable-Computing-CURE-Lab"><a href="#CUhk-REliable-Computing-CURE-Lab" class="headerlink" title="CUhk REliable Computing (CURE) Lab"></a><a href="https://github.com/cure-lab">CUhk REliable Computing (CURE) Lab</a></h3><ul><li><p><a href="https://github.com/ailingzengzzz">Ailing Zeng</a> : Equal contribution</p></li><li><p><a href="https://github.com/mixiancmx">Muxi Chen</a> : Equal contribution</p></li><li><p><a href="https://github.com/xuqiang1116">Qiang Xu</a> : Corresponding author</p></li></ul><h3 id="International-Digital-Economy-Academy-IDEA"><a href="#International-Digital-Economy-Academy-IDEA" class="headerlink" title="International Digital Economy Academy (IDEA)"></a>International Digital Economy Academy (IDEA)</h3><ul><li><a href="https://scholar.google.com/citations?user=fIlGZToAAAAJ&hl=zh-CN&oi=sra">Lei Zhang</a> :</li></ul><h2 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p>⭐ Long-term Time Series Forecasting(LTSF)</p><p>⭐ Multivariable</p><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><ul><li>Electricity</li><li>Exchange</li><li>Traffic</li><li>Weather</li><li>ILI</li><li>ETTh1</li><li>ETTh2</li><li>ETTm1</li><li>ETTm2</li></ul><h2 id="Achievements"><a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h2><ul><li>Question that the effectiveness of emerging favored Transformer-based solutions for the LSTM. The simple LSTF-Linear outperforms existing sophisticated Transformer-based LSTF models.</li><li>Propose a embarrassingly simple linear model LSTF-Linear.<br><img src="/fanglinwanghao/img/NLinear/figure_01.png"><center>Fig.1: Illustration of the basic linear model.</center></li></ul><br />Disclaimer: The above contents are taken from literature or internet without malicious tampering.<hr><br /><h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2><h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2>]]></content>
     
@@ -92,8 +92,8 @@
   
   <entry>
     <title>External Attention</title>
-    <link href="/fanglinwanghao/2023/02/02/External_Attention/"/>
-    <url>/fanglinwanghao/2023/02/02/External_Attention/</url>
+    <link href="/fanglinwanghao/2023/02/02/reference/External_Attention/"/>
+    <url>/fanglinwanghao/2023/02/02/reference/External_Attention/</url>
     
     <content type="html"><![CDATA[<h1 id="Beyond-Self-attention-External-Attention-using-Two-Linear-Layers-for-Visual-Tasks"><a href="#Beyond-Self-attention-External-Attention-using-Two-Linear-Layers-for-Visual-Tasks" class="headerlink" title="Beyond Self-attention: External Attention using Two Linear Layers for Visual Tasks"></a>Beyond Self-attention: External Attention using Two Linear Layers for Visual Tasks</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><ul><li><a href="https://ieeexplore.ieee.org/abstract/document/9912362/"><strong>IEEE</strong></a></li><li><a href="https://arxiv.org/abs/2105.02358"><strong>Arxiv</strong></a></li></ul><h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><h3 id="Tsinghua-University"><a href="#Tsinghua-University" class="headerlink" title="Tsinghua University"></a>Tsinghua University</h3><ul><li><p><a href="https://scholar.google.com/citations?user=DnXVAgcAAAAJ&hl=zh-CN&scioq=Skillful+Twelve+Hour+Precipitation+Forecasts+using+Large+Context+Neural+Networks&oi=sra">Meng-Hao Guo</a> :</p></li><li><p><a href="https://scholar.google.com/citations?user=wjPqa9EAAAAJ&hl=zh-CN&scioq=Skillful+Twelve+Hour+Precipitation+Forecasts+using+Large+Context+Neural+Networks&oi=sra">Zheng-Ning Liu</a> :</p></li><li><p><a href="https://scholar.google.com/citations?user=V-0oiTYAAAAJ&hl=zh-CN&scioq=Skillful+Twelve+Hour+Precipitation+Forecasts+using+Large+Context+Neural+Networks&oi=sra">Tai-Jiang Mu</a> :</p></li><li><p><a href="https://scholar.google.com/citations?user=LDb4tb0AAAAJ&hl=zh-CN&scioq=Skillful+Twelve+Hour+Precipitation+Forecasts+using+Large+Context+Neural+Networks&oi=sra">Shi-Min Hu</a> : corresponding author</p></li></ul><h2 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p>⭐ :</p><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><h3 id="Block"><a href="#Block" class="headerlink" title="Block"></a>Block</h3><ul><li>external attention</li></ul><h2 id="Achievements"><a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h2><ul><li><p>propse the lightweight attetnion mechanism called external attention.<br><img src="/fanglinwanghao/img/external_att/figure_01.png"></p><center>Fig 1: Self-attention versus external-attention</center><br /><p><img src="/fanglinwanghao/img/external_att/figure_02.png"></p><center>Fig 2: Multi-head self-attention and multi-head external-attention</center><br /><p><img src="/fanglinwanghao/img/external_att/figure_03.png"></p><center>Fig 3: EANet architecture for semantic segmentation using our proposed external attention</center><br /></li><li></li></ul><br />Disclaimer: The above contents are taken from literature or internet without malicious tampering.<hr><br /><h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2><p>- </p><h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><ul><li><p><strong>Self-attention</strong>:<br>Self-attention works by refining the representation at each position via aggregating features from all other locations in a single sample, which leads to quadratic computational complexity in the number of locations in a sample.</p></li><li></li></ul>]]></content>
     
@@ -112,35 +112,6 @@
       <tag>Reference</tag>
       
       <tag>Attention</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>MetNet-2</title>
-    <link href="/fanglinwanghao/2023/02/01/MetNet2/"/>
-    <url>/fanglinwanghao/2023/02/01/MetNet2/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Skillful-Twelve-Hour-Precipitation-Forecasts-using-Large-Context-Neural-Networks"><a href="#Skillful-Twelve-Hour-Precipitation-Forecasts-using-Large-Context-Neural-Networks" class="headerlink" title="Skillful Twelve Hour Precipitation Forecasts using Large Context Neural Networks"></a>Skillful Twelve Hour Precipitation Forecasts using Large Context Neural Networks</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><ul><li><a href="https://arxiv.org/abs/2111.07470"><strong>Arxiv</strong></a></li></ul><h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><h3 id="Google-Research"><a href="#Google-Research" class="headerlink" title="Google Research"></a><a href="">Google Research</a></h3><ul><li><p><a href="">Lasse Espeholt</a> : corresponding author &#x2F; Brain team</p></li><li><p><a href="">Shreya Agrawal</a> : AI for Weather team</p></li><li><p><a href="">Casper Sønderby</a> : Brain team</p></li><li><p><a href="">Manoj Kumar</a> : Brain team</p></li><li><p><a href="">Jonathan Heek</a> : Brain team</p></li><li><p><a href="">Carla Bromberg</a> : AI for Weather team</p></li><li><p><a href="">Cenk Gazen</a> : AI for Weather team</p></li><li><p><a href="">Jason Hickey</a> : AI for Weather team</p></li><li><p><a href="">Aaron Bell</a> : Kernel team</p></li><li><p><a href="">Nal Kalchbrenner</a> : corresponding author &#x2F; Brain team</p></li></ul><h2 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p>⭐ Short-term forecasting</p><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><ul><li>Ground radars(feature)</li><li>Ground weather station(observation &#x2F; label)</li></ul><h3 id="Neural-Network-Type"><a href="#Neural-Network-Type" class="headerlink" title="Neural Network Type"></a>Neural Network Type</h3><ul><li>Convolutional Neural Network(CNN)</li><li>Long-Short Time Memory(LSTM)</li></ul><h2 id="Achievements"><a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h2><ul><li><p>propose a novel neural network architecture: Sample Convolution and Interaction network (SCINet).<br><img src="/fanglinwanghao/img/metnet2/figure_01.png"><center>Fig.1: MetNet-2 architecture.</center></p></li><li><p>MetNet2 achieves greater skill than the SOTA physics-based models HRRR and HREF(currently operate in the Continental United States).</p></li></ul><br/><p>Disclaimer: The above contents are taken from literature or internet without malicious tampering.</p><hr><br/><h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2><ul><li><p>We do not discard the physical model, it is reasonable to consider adding a priori physical information to the model.</p></li><li><p>It may have greater result that the neural network extracts information from all the available inputs than takes a produced input.</p></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Reference</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Reference</tag>
-      
-      <tag>Weather forecast</tag>
-      
-      <tag>TSF</tag>
       
     </tags>
     
@@ -180,9 +151,38 @@
   
   
   <entry>
+    <title>MetNet-2</title>
+    <link href="/fanglinwanghao/2023/02/01/reference/MetNet2/"/>
+    <url>/fanglinwanghao/2023/02/01/reference/MetNet2/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Skillful-Twelve-Hour-Precipitation-Forecasts-using-Large-Context-Neural-Networks"><a href="#Skillful-Twelve-Hour-Precipitation-Forecasts-using-Large-Context-Neural-Networks" class="headerlink" title="Skillful Twelve Hour Precipitation Forecasts using Large Context Neural Networks"></a>Skillful Twelve Hour Precipitation Forecasts using Large Context Neural Networks</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><ul><li><a href="https://arxiv.org/abs/2111.07470"><strong>Arxiv</strong></a></li></ul><h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><h3 id="Google-Research"><a href="#Google-Research" class="headerlink" title="Google Research"></a><a href="">Google Research</a></h3><ul><li><p><a href="">Lasse Espeholt</a> : corresponding author &#x2F; Brain team</p></li><li><p><a href="">Shreya Agrawal</a> : AI for Weather team</p></li><li><p><a href="">Casper Sønderby</a> : Brain team</p></li><li><p><a href="">Manoj Kumar</a> : Brain team</p></li><li><p><a href="">Jonathan Heek</a> : Brain team</p></li><li><p><a href="">Carla Bromberg</a> : AI for Weather team</p></li><li><p><a href="">Cenk Gazen</a> : AI for Weather team</p></li><li><p><a href="">Jason Hickey</a> : AI for Weather team</p></li><li><p><a href="">Aaron Bell</a> : Kernel team</p></li><li><p><a href="">Nal Kalchbrenner</a> : corresponding author &#x2F; Brain team</p></li></ul><h2 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p>⭐ Short-term forecasting</p><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><ul><li>Ground radars(feature)</li><li>Ground weather station(observation &#x2F; label)</li></ul><h3 id="Neural-Network-Type"><a href="#Neural-Network-Type" class="headerlink" title="Neural Network Type"></a>Neural Network Type</h3><ul><li>Convolutional Neural Network(CNN)</li><li>Long-Short Time Memory(LSTM)</li></ul><h2 id="Achievements"><a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h2><ul><li><p>propose a novel neural network architecture: Sample Convolution and Interaction network (SCINet).<br><img src="/fanglinwanghao/img/metnet2/figure_01.png"><center>Fig.1: MetNet-2 architecture.</center></p></li><li><p>MetNet2 achieves greater skill than the SOTA physics-based models HRRR and HREF(currently operate in the Continental United States).</p></li></ul><br/><p>Disclaimer: The above contents are taken from literature or internet without malicious tampering.</p><hr><br/><h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2><ul><li><p>We do not discard the physical model, it is reasonable to consider adding a priori physical information to the model.</p></li><li><p>It may have greater result that the neural network extracts information from all the available inputs than takes a produced input.</p></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Reference</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Reference</tag>
+      
+      <tag>Weather forecast</tag>
+      
+      <tag>TSF</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Pangu-Weather</title>
-    <link href="/fanglinwanghao/2023/01/29/Pangu_Weather/"/>
-    <url>/fanglinwanghao/2023/01/29/Pangu_Weather/</url>
+    <link href="/fanglinwanghao/2023/01/29/reference/Pangu_Weather/"/>
+    <url>/fanglinwanghao/2023/01/29/reference/Pangu_Weather/</url>
     
     <content type="html"><![CDATA[<h1 id="Pangu-Weather-A-3D-High-Resolution-System-for-Fast-and-Accurate-Global-Weather-Forecast"><a href="#Pangu-Weather-A-3D-High-Resolution-System-for-Fast-and-Accurate-Global-Weather-Forecast" class="headerlink" title="Pangu-Weather: A 3D High-Resolution System for Fast and Accurate Global Weather Forecast"></a>Pangu-Weather: A 3D High-Resolution System for Fast and Accurate Global Weather Forecast</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><ul><li><a href="https://arxiv.org/abs/2211.02556"><strong>Arxiv</strong></a></li><li><a href="https://zhuanlan.zhihu.com/p/582285853?utm_id=0"><strong>知乎</strong></a></li></ul><h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><h3 id="Huawei-Cloud-Computing"><a href="#Huawei-Cloud-Computing" class="headerlink" title="Huawei Cloud Computing"></a><a href="">Huawei Cloud Computing</a></h3><ul><li><p><a href="">Kaifeng Bi</a> :  primary author</p></li><li><p><a href="https://scholar.google.com/citations?user=EEMm7hwAAAAJ&hl=zh-CN&oi=sra">Lingxi Xie</a> :</p></li><li><p><a href="">Hengheng Zhang</a> :</p></li><li><p><a href="https://scholar.google.com/citations?user=oqv81a0AAAAJ&hl=zh-CN&oi=sra">Xin Chen</a> :</p></li><li><p><a href="https://scholar.google.com/citations?user=YR4Lp0QAAAAJ&hl=zh-CN&oi=sra">Xiaotao Gu</a> :</p></li><li><p><a href="https://scholar.google.com/citations?user=61b6eYkAAAAJ&hl=zh-CN&oi=sra">Qi Tian</a> : corresponding author</p></li></ul><h2 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p>⭐ Global Weather Forecast:</p><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><h3 id="Neural-Network-Type"><a href="#Neural-Network-Type" class="headerlink" title="Neural Network Type"></a>Neural Network Type</h3><ul><li>Transformer</li></ul><h2 id="Achievements"><a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h2><ul><li><p>propose a 3-D Earth Specific Transformer(3DEST) architecture.<br><img src="/fanglinwanghao/img/pangu/figure_01.png"><center>Fig 1: An overview of 3DEST.Based on the standard encode-decoder design, (i) adjust the shifted-window mechanism and (ii) apply an Earth-specific positional bias.</center></p></li><li><p>With ERA5 only, 3DEST outperforms SOTA NWP in terms of accuracy of all factors(<font color="#dd0000">Controversial</font>)</p></li><li><p>With more powerful computational device and higher-quality training data, apply hierarchical temporal aggregation to alleviate cumulative forecast errors.</p></li></ul><br />Disclaimer: The above contents are taken from literature or internet without malicious tampering.<hr><br /><h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2><ul><li><p>From the perspective of weather physics, the influence of the upper level meteorological elements on ground elements contributes to the effectiveness of forecasting. Meanwhile, for computer vision, it actually means having a more global receptive field and information.</p></li><li><p>The work suggests that the bigger model would be a more prevalent method for solving more complex problems.</p></li></ul>]]></content>
     
@@ -211,9 +211,34 @@
   
   
   <entry>
+    <title>Neural Ordinary Differential Equations(NODE)</title>
+    <link href="/fanglinwanghao/2023/01/27/reference/NODE/"/>
+    <url>/fanglinwanghao/2023/01/27/reference/NODE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="Reduced-order-Model-for-Fluid-Flows-via-Neural-Ordinary-Differential-Equations"><a href="#Reduced-order-Model-for-Fluid-Flows-via-Neural-Ordinary-Differential-Equations" class="headerlink" title="Reduced-order Model for Fluid Flows via Neural Ordinary Differential Equations"></a>Reduced-order Model for Fluid Flows via Neural Ordinary Differential Equations</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><ul><li><a href="https://arxiv.org/abs/2102.02248"><strong>Arxiv</strong></a></li><li><a href="https://github.com/CarlosJose126/NeuralODE-ROM"><strong>Github</strong></a></li></ul><h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><h3 id=""><a href="#" class="headerlink" title=""></a><a href=""></a></h3><ul><li><p><a href="">Carlos J.G. Rojas</a> : First author</p></li><li><p><a href="">Andreas Dengel</a> :</p></li><li><p><a href="">Mateus Dias Ribeiro</a> :</p></li></ul><h2 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p>⭐ </p><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><p>* </p><h3 id="Neural-Network-Type"><a href="#Neural-Network-Type" class="headerlink" title="Neural Network Type"></a>Neural Network Type</h3><p>- </p><h2 id="Achievements"><a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h2><p>* </p><p>* </p><br />Disclaimer: The above contents are taken from literature or internet without malicious tampering.<hr><br /><h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>Reference</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Reference</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>SCINet</title>
-    <link href="/fanglinwanghao/2023/01/27/SCINet/"/>
-    <url>/fanglinwanghao/2023/01/27/SCINet/</url>
+    <link href="/fanglinwanghao/2023/01/27/reference/SCINet/"/>
+    <url>/fanglinwanghao/2023/01/27/reference/SCINet/</url>
     
     <content type="html"><![CDATA[<h1 id="SCINet-Time-Series-Modeling-and-Forecasting-with-Sample-Convolution-and-Interaction"><a href="#SCINet-Time-Series-Modeling-and-Forecasting-with-Sample-Convolution-and-Interaction" class="headerlink" title="SCINet: Time Series Modeling and Forecasting with Sample Convolution and Interaction"></a>SCINet: Time Series Modeling and Forecasting with Sample Convolution and Interaction</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><ul><li><a href="https://arxiv.org/abs/2106.09305"><strong>Arxiv</strong></a></li><li><a href="https://github.com/cure-lab/SCINet"><strong>Github</strong></a></li></ul><h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><h3 id="CUhk-REliable-Computing-CURE-Lab"><a href="#CUhk-REliable-Computing-CURE-Lab" class="headerlink" title="CUhk REliable Computing (CURE) Lab"></a><a href="https://github.com/cure-lab">CUhk REliable Computing (CURE) Lab</a></h3><ul><li><p><a href="https://github.com/AlexMinhao">Minhao Liu</a> : First author</p></li><li><p><a href="https://github.com/ailingzengzzz">Ailing Zeng</a> :</p></li><li><p><a href="https://github.com/mixiancmx">Muxi Chen</a> :</p></li><li><p><a href="https://github.com/VEWOXIC">Zhijian Xu</a> :</p></li><li><p><a href="">Qiuxia Lai</a> :</p></li><li><p><a href="">Lingna Ma</a> :</p></li><li><p><a href="https://github.com/xuqiang1116">Qiang Xu</a> : Corresponding author</p></li></ul><h2 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p>⭐ Time Series Forecasting(TSF)</p><p>⭐ Multivariable</p><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><ul><li>ETT</li><li>Traffic</li><li>Solar</li><li>Electricity</li><li>Exchange</li><li>PEMS03</li><li>PEMS04</li><li>PEMS07</li><li>PEMS08</li></ul><h3 id="Neural-Network-Type"><a href="#Neural-Network-Type" class="headerlink" title="Neural Network Type"></a>Neural Network Type</h3><ul><li>Temporal Convolutional Network(TCN)</li></ul><h2 id="Achievements"><a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h2><ul><li><p>propose a novel neural network architecture: Sample Convolution and Interaction network (SCINet).<br><img src="/fanglinwanghao/img/scinet/figure_01.png"><center>Fig.1: The overall architecture of SCINet.</center></p></li><li><p>Extensive experiments on various real-world TSF datasets demonstrate the superiority of the model over SOTA methods(RNN&#x2F;TCN&#x2F;Transformer&#x2F;GNN).</p></li></ul><br />Disclaimer: The above contents are taken from literature or internet without malicious tampering.<hr><br /><h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2><h3 id="Interaction"><a href="#Interaction" class="headerlink" title="Interaction"></a>Interaction</h3><ul><li>What is the reason, the interaction of the odd &#x2F; even time series could aggr</li></ul>]]></content>
     
@@ -234,31 +259,6 @@
       <tag>TCN</tag>
       
       <tag>TSF</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Neural Ordinary Differential Equations(NODE)</title>
-    <link href="/fanglinwanghao/2023/01/27/NODE/"/>
-    <url>/fanglinwanghao/2023/01/27/NODE/</url>
-    
-    <content type="html"><![CDATA[<h1 id="Reduced-order-Model-for-Fluid-Flows-via-Neural-Ordinary-Differential-Equations"><a href="#Reduced-order-Model-for-Fluid-Flows-via-Neural-Ordinary-Differential-Equations" class="headerlink" title="Reduced-order Model for Fluid Flows via Neural Ordinary Differential Equations"></a>Reduced-order Model for Fluid Flows via Neural Ordinary Differential Equations</h1><h2 id="Source"><a href="#Source" class="headerlink" title="Source"></a>Source</h2><ul><li><a href="https://arxiv.org/abs/2102.02248"><strong>Arxiv</strong></a></li><li><a href="https://github.com/CarlosJose126/NeuralODE-ROM"><strong>Github</strong></a></li></ul><h2 id="Authors"><a href="#Authors" class="headerlink" title="Authors"></a>Authors</h2><h3 id=""><a href="#" class="headerlink" title=""></a><a href=""></a></h3><ul><li><p><a href="">Carlos J.G. Rojas</a> : First author</p></li><li><p><a href="">Andreas Dengel</a> :</p></li><li><p><a href="">Mateus Dias Ribeiro</a> :</p></li></ul><h2 id="Labels"><a href="#Labels" class="headerlink" title="Labels"></a>Labels</h2><h3 id="Task"><a href="#Task" class="headerlink" title="Task"></a>Task</h3><p>⭐ </p><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><p>* </p><h3 id="Neural-Network-Type"><a href="#Neural-Network-Type" class="headerlink" title="Neural Network Type"></a>Neural Network Type</h3><p>- </p><h2 id="Achievements"><a href="#Achievements" class="headerlink" title="Achievements"></a>Achievements</h2><p>* </p><p>* </p><br />Disclaimer: The above contents are taken from literature or internet without malicious tampering.<hr><br /><h2 id="Ideas"><a href="#Ideas" class="headerlink" title="Ideas"></a>Ideas</h2>]]></content>
-    
-    
-    <categories>
-      
-      <category>Reference</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Reference</tag>
       
     </tags>
     
