@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="FANG LINWANGHAO">
+
+
+
+
+
+<title>Development of Convolution Nerural Network(Image Classification) | FANG LINWANGHAO</title>
+
+
+
+    <link rel="icon" href="/fanglinwanghao/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/fanglinwanghao/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/fanglinwanghao/js/script.js"></script>
+    
+    <script src="/fanglinwanghao/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+        
+    
+
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/fanglinwanghao/">FANG LINWANGHAO</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/fanglinwanghao/pubilcation">Pubilcation</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/archives">Posts</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/tag">Tags</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/fanglinwanghao/">FANG LINWANGHAO</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/fanglinwanghao/pubilcation">Pubilcation</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/archives">Posts</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/tag">Tags</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Development of Convolution Nerural Network(Image Classification)</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">FANG LINWANGHAO</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">January 17, 2024&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p>Convolutional Neural Networks (CNNs) have been developed for over 20 years, and their application in the field of Computer Vision (CV) has become highly mature. This paper aims to provide a brief review of the evolution of CNNs, outlining key milestones and providing an overview of these landmark models.</p>
+<ul>
+<li><a href="#lenet---1989">LeNet</a></li>
+<li><a href="#alexnet---2012">AlexNet</a></li>
+<li><a href="#vgg---2014">VGG</a></li>
+<li><a href="#googlenet---2014">GoogLeNet</a></li>
+<li><a href="#resnet---2015">ResNet</a></li>
+<li><a href="#densenet---2017">DenseNet</a></li>
+</ul>
+<h2 id="LeNet-1989"><a href="#LeNet-1989" class="headerlink" title="LeNet - 1989"></a>LeNet - 1989</h2><p>LeNet was proposed by Yann LeCun, marking the inception of convolutional networks. It is the pioneering convolutional network that laid the foundation for subsequent developments.</p>
+<p>LeNet is specifically designed for recognizing real images, such as handwritten digits. It serves as the origin of concepts like <code>Local Response</code>, <code>Weight Sharing</code>, and <code>Pooling</code> in CNNs. While it outperformed other contemporary models, limitations in hardware arithmetic hindered its robust development and expansion.</p>
+<h3 id="Architecture-of-LeNet"><a href="#Architecture-of-LeNet" class="headerlink" title="Architecture of LeNet"></a>Architecture of LeNet</h3><p>There are 7 layers in LeNet.</p>
+<ul>
+<li>Input: This is a preprocessing layer, not part of the network. In this layer, the input image is normalized to a size of $32\times32$.</li>
+<li>C1: The is the first layer of network. It contains of 6 $5\times5$ <code>Convolutions</code>. The size of output feature map is $28\times28$.</li>
+<li>S2: This layer involves 6 $2\times2$ average pooling operations, resulting in an output feature map size of $14\times14$.</li>
+<li>C3：In this layer, there are 16 $5\times5$ convolutions, producing an output feature map size of $10\times10$.</li>
+<li>S4: This layer involves 16 $2\times2$ <code>Average Pooling</code>, and the size of output feature map is $5\times5$.</li>
+<li>F5: This is fully connected layer. The size of input feature map is $16 \times 5 \times 5 &#x3D; 400$, and the size of output feature map is 120.</li>
+<li>F6: Another fully connected layer where the size of the input feature map is 120, and the output feature map size is 84.</li>
+<li>F7: This is the Gaussian connected output layer with <code>Softmax</code>. The size of input is 84, and the size of output is numbers of classes (10).</li>
+</ul>
+<p align="center">
+  <img src="/fanglinwanghao/image/2024-01-17-CNN/LeNet.jpg" 
+  alt="Figur 1. Architecture of LeNet.">
+</p>
+<center>Figur 1. Architecture of LeNet.</center>
+
+<h3 id="Resource"><a href="#Resource" class="headerlink" title="Resource"></a>Resource</h3><p>“Handwritten Digit Recognition with a Back-Propagation Network”</p>
+<p>[<a href="https://proceedings.neurips.cc/paper_files/paper/1989/file/53c3bce66e43be4f209556518c2fcb54-Paper.pdf" target="_blank">Paper</a>]</p>
+<p>[<a href="" target="_blank">Code (No Resource)</a>]</p>
+<h2 id="AlexNet-2012"><a href="#AlexNet-2012" class="headerlink" title="AlexNet - 2012"></a>AlexNet - 2012</h2><p>AlexNet was proposed by Alex Krizhevsky, marking a significant step into the era of Deep Learning. This deep convolutional neural network exhibited remarkable performance and emerged victorious in the ILSVRC-2012 competition.<br>AlexNet introduces the novel activation function called <code>ReLU</code>, replacing traditional <code>Tanh</code> and <code>Sigmoid</code> functions. Additionally, Dropout and data augmentation were implemented to mitigate overfitting. Furthermore, the inclusion of Local Response Normalization contributes to enhanced generalization. Notably, training on multiple GPUs allows AlexNet to overcome the limitation of its maximum size.</p>
+<h3 id="Architecture-of-AlexNet"><a href="#Architecture-of-AlexNet" class="headerlink" title="Architecture of AlexNet"></a>Architecture of AlexNet</h3><p>AlexNet consists of eight layers with weights, with the initial five being convolutional layers and the remaining three being fully connected layers. Notably, AlexNet employs two large kernel convolutions, specifically $11\times11$ and $5\times5$, to achieve a large receptive field.</p>
+<p align="center">
+  <img src="/fanglinwanghao/image/2024-01-17-CNN//AlexNet.bmp" 
+  alt="Figur 2. Architecture of AlexNet.">
+</p>
+<center>Figur 2. Architecture of AlexNet.</center>
+
+<h3 id="Resource-1"><a href="#Resource-1" class="headerlink" title="Resource"></a>Resource</h3><p>“ImageNet Classification with Deep Convolutional Neural Networks”</p>
+<p>[<a href="https://proceedings.neurips.cc/paper_files/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf" target="_blank">Paper</a>]</p>
+<p>[<a href="" target="_blank">Code (No Resource)</a>]</p>
+<h2 id="VGG-2014"><a href="#VGG-2014" class="headerlink" title="VGG - 2014"></a>VGG - 2014</h2><p>While AlexNet demonstrated superior performance in ILSVRC-2012, it faced challenges in training and slow back-propagation due to an abundance of parameters in large kernels. Consequently, VGG was proposed by Karen Simonyan, introducing very small convolutions to replace the large kernel convolutions.</p>
+<p>This approach offers two advantages. Firstly, it incorporates multiple non-linear rectification layers instead of a single one, enhancing the discriminative power of the decision function. Secondly, it reduces the number of parameters. Additionally, the researchers explored the relationship between neural network depth and performance. Their findings indicate that a significant improvement in prior-art configurations can be achieved by increasing the depth to 16–19 weight layers.</p>
+<h3 id="Architecture-of-VGG"><a href="#Architecture-of-VGG" class="headerlink" title="Architecture of VGG"></a>Architecture of VGG</h3><p>VGG Net shares similarities with AlexNet but differs significantly from it. In contrast to AlexNet, VGG Net replaces large kernel convolutions with small kernel convolutions. In VGG Net, a stack of two $3\times3$ convolution layers (without spatial pooling in between) replaces an effective receptive field of $5\times5$, and three $3\times3$ convolution layers replace $7\times7$.</p>
+<p align="center">
+  <img src="/fanglinwanghao/image/2024-01-17-CNN//VGG.jpg" 
+  alt="Figur 3. Architecture of VGG.">
+</p>
+<center>Figur 3. Architecture of VGG.</center>
+
+<h3 id="Resource-2"><a href="#Resource-2" class="headerlink" title="Resource"></a>Resource</h3><p>“Very Deep Convolutional Networks for Large-Scale Image Recognition”</p>
+<p>[<a href="https://arxiv.org/pdf/1409.1556.pdf" target="_blank">Paper</a>]</p>
+<p>[<a href="https://github.com/machrisaa/tensorflow-vgg" target="_blank">Code in Github(UNOFFICIAL)</a>]</p>
+<h2 id="GoogLeNet-2014"><a href="#GoogLeNet-2014" class="headerlink" title="GoogLeNet - 2014"></a>GoogLeNet - 2014</h2><p>The success of VGG Net facilitated the progression towards deeper and wider neural networks. However, as the number of network parameters increases and when training data is limited, the model becomes susceptible to overfitting and gradient vanishing problems. To address the challenge of parameter count, one might consider sparse connections instead of full connections. However, because GPUs are optimized for fast operations on dense matrices, sparsely populated matrices do not significantly enhance computational efficiency for available computational resources. Therefore, sparse connections would result in a wasteful allocation of network computation resources.</p>
+<p>To address these challenges, the Google team introduced GoogLeNet, primarily composed of the Inception architecture. The key feature of the Inception architecture is its enhanced utilization of computing resources within the network.</p>
+<p>[This name, GoogLeNet, is an homage to Yann LeCuns pioneering LeNet 5 network]</p>
+<h3 id="Architecture-of-Inception"><a href="#Architecture-of-Inception" class="headerlink" title="Architecture of Inception"></a>Architecture of Inception</h3><p>Inception-V1 incorporates $1\times1$, $3\times3$, and $5\times5$ convolutions, along with one $3\times3$ max-pooling layer. Moreover, each large kernel convolution and pooling layer is succeeded by a $1\times1$ convolution, directly reducing dimensions and eliminating computational bottlenecks. Inception-V1 represents an optimal local sparse structure in a convolutional vision network.</p>
+<p align="center">
+  <img src="/fanglinwanghao/image/2024-01-17-CNN//Inception.jpg" 
+  alt="Figur 4. Architecture of Inception Module.">
+</p>
+<center>Figur 4. Architecture of Inception Module.</center>
+
+
+<h3 id="Resource-3"><a href="#Resource-3" class="headerlink" title="Resource"></a>Resource</h3><p>“Going deeper with convolutions”</p>
+<p>[<a href="https://www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Szegedy_Going_Deeper_With_2015_CVPR_paper.pdf" target="_blank">Paper</a>]</p>
+<p>[<a href="https://github.com/conan7882/GoogLeNet-Inception" target="_blank">Code in Github(UNOFFICIAL)</a>]</p>
+<h2 id="ResNet-2015"><a href="#ResNet-2015" class="headerlink" title="ResNet - 2015"></a>ResNet - 2015</h2><p>At first glance, it might seem intuitive that deeper networks lead to better performance. However, this is not always the case. As networks grow deeper and begin to converge, a degradation problem emerges: as the network depth increases, accuracy saturates (which may be expected) and then rapidly degrades. Surprisingly, this degradation is not caused by overfitting, and the addition of more layers to a suitably deep model results in higher training error, as illustrated in Fig 5.</p>
+<p align="center">
+  <img src="/fanglinwanghao/image/2024-01-17-CNN/ResultofDeeperNetwork.bmp" 
+  alt="Figur 5. Training error (left) and test error (right) on CIFAR-10
+with 20-layer and 56-layer “plain” networks.
+">
+</p>
+<center>Figur 5. Training error (left) and test error (right) on CIFAR-10
+with 20-layer and 56-layer “plain” networks.</center>
+
+<p>To overcome this performance bottleneck, Kaiming He proposed ResNet. The Residual learning framework addresses the degradation problem by introducing shortcut connections that perform identity mapping, and their outputs are added to the outputs of the stacked layers. Traditional networks expect layers to follow $H(X) &#x3D; F(X) + x$, but ResNet expects layers to follow $F(x)$. While both forms should theoretically asymptotically approximate the desired functions, the ease of learning may differ.</p>
+<h3 id="Architecture-of-Residual-Learning-Framework"><a href="#Architecture-of-Residual-Learning-Framework" class="headerlink" title="Architecture of Residual Learning Framework"></a>Architecture of Residual Learning Framework</h3><p>The formulation of $F(x) + x$ can be implemented in feedforward neural networks with ‘shortcut connections,’ as illustrated in Fig 6.</p>
+<p align="center">
+  <img src="/fanglinwanghao/image/2024-01-17-CNN//ResNet.jpg" 
+  alt="Figur 6. Architecture of Residual learning framework.">
+</p>
+<center>Figur 6. Architecture of Residual learning framework.</center>
+
+<h3 id="Resource-4"><a href="#Resource-4" class="headerlink" title="Resource"></a>Resource</h3><p>“Deep Residual Learning for Image Recognition”</p>
+<p>[<a href="https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf" target="_blank">Paper</a>]</p>
+<p>[<a href="https://github.com/KaimingHe/deep-residual-networks" target="_blank">Code in Github</a>]</p>
+<h2 id="DenseNet-2017"><a href="#DenseNet-2017" class="headerlink" title="DenseNet - 2017"></a>DenseNet - 2017</h2><p>Residual learning framework brings huge computational overhead and excessive feature redundancy in computation. And researchs show that many layers in ResNet contribute very little and can in fact be randomly dropped during training. Therefore, Gao Huang proposed DenseNet architecture explicitly differentiates between information that is added to the network and information that is preserved. Cleverly designed so that DenseNet require substantially fewer parameters and less computation to achieve state-of-the-art performances.</p>
+<h3 id="Architecture-of-DenseNet"><a href="#Architecture-of-DenseNet" class="headerlink" title="Architecture of DenseNet"></a>Architecture of DenseNet</h3><p>To ensure maximum information flow between layers in the network, DenseNet<br>connect all layers (with matching feature-map sizes) directly with each other. Crucially, in contrast to ResNets, DenseNet never combines features<br>through summation before they are passed into a layer; instead, it combines features by concatenating them.</p>
+<p align="center">
+  <img src="/fanglinwanghao/image/2024-01-17-CNN//DenseNet.bmp" 
+  alt="Figur 7. Architecture of DenseNet.">
+</p>
+<center>Figur 7. Architecture of DenseNet.</center>
+
+
+<h3 id="Resource-5"><a href="#Resource-5" class="headerlink" title="Resource"></a>Resource</h3><p>“Densely Connected Convolutional Networkss”</p>
+<p>[<a href="https://arxiv.org/pdf/1608.06993.pdf" target="_blank">Paper</a>]</p>
+<p>[<a href="https://github.com/liuzhuang13/DenseNet" target="_blank">Code in Github</a>]</p>
+<h1 id="Blog-in-Chines"><a href="#Blog-in-Chines" class="headerlink" title="Blog in Chines"></a>Blog in Chines</h1><p>(卷积神经网络的发展——图像分类)[<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/678907941]">https://zhuanlan.zhihu.com/p/678907941]</a></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>[1]	Y. LeCun et al., “Handwritten Digit Recognition with a Back-Propagation Network,” Neural Information Processing Systems, 1989, doi: null.</p>
+<p>[2]	A. Krizhevsky, A. Krizhevsky, I. Sutskever, I. Sutskever, G. E. Hinton, and G. E. Hinton, “ImageNet classification with deep convolutional neural networks,” Commun ACM, 2017, doi: 10.1145&#x2F;3065386.</p>
+<p>[3]	K. Simonyan and A. Zisserman, “Very Deep Convolutional Networks for Large-Scale Image Recognition,” International Conference on Learning Representations, 2014, doi: null.</p>
+<p>[4]	C. Szegedy et al., “Going deeper with convolutions,” Computer Vision<br>and Pattern Recognition, 2015, doi: 10.1109&#x2F;cvpr.2015.7298594.</p>
+<p>[5]	K. He et al., “Deep Residual Learning for Image Recognition,” arXiv: Computer Vision and Pattern Recognition, 2015, doi: 10.1109&#x2F;cvpr.2016.90.</p>
+<p>[6]	G. Huang et al., “Densely Connected Convolutional Networks,” arXiv: Computer Vision and Pattern Recognition, 2016, doi: 10.1109&#x2F;cvpr.2017.243.</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>FANG LINWANGHAO</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://aprildomlin.github.io/fanglinwanghao/2024/01/17/2024-01-17-CNN/">https://aprildomlin.github.io/fanglinwanghao/2024/01/17/2024-01-17-CNN/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span></span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/fanglinwanghao/tags/Note/"># Note</a>
+                    
+                        <a href="/fanglinwanghao/tags/Deeplearning/"># Deeplearning</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/fanglinwanghao/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/fanglinwanghao/2024/01/19/2024-01-19-SSH/">SSH tunnel</a>
+            
+            
+        </section>
+
+
+    </article>
+</div>
+
+
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© FANG LINWANGHAO | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
