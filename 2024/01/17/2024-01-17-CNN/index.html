@@ -276,7 +276,7 @@
 <li>F7: This is the Gaussian connected output layer with <code>Softmax</code>. The size of input is 84, and the size of output is numbers of classes (10).</li>
 </ul>
 <p align="center">
-  <img src="/image/2024-01-17-CNN/LeNet.jpg" 
+  <img src="/fanglinwanghao/image/2024-01-17-CNN/LeNet.jpg" 
   alt="Figure 1. Architecture of LeNet.">
 </p>
 <center>Figure 1. Architecture of LeNet.</center>
@@ -287,7 +287,7 @@
 <h2 id="AlexNet-2012"><a href="#AlexNet-2012" class="headerlink" title="AlexNet - 2012"></a>AlexNet - 2012</h2><p>AlexNet was proposed by Alex Krizhevsky, marking a significant step into the era of Deep Learning. This deep convolutional neural network exhibited remarkable performance and emerged victorious in the ILSVRC-2012 competition.<br>AlexNet introduces the novel activation function called <code>ReLU</code>, replacing traditional <code>Tanh</code> and <code>Sigmoid</code> functions. Additionally, Dropout and data augmentation were implemented to mitigate overfitting. Furthermore, the inclusion of Local Response Normalization contributes to enhanced generalization. Notably, training on multiple GPUs allows AlexNet to overcome the limitation of its maximum size.</p>
 <h3 id="Architecture-of-AlexNet"><a href="#Architecture-of-AlexNet" class="headerlink" title="Architecture of AlexNet"></a>Architecture of AlexNet</h3><p>AlexNet consists of eight layers with weights, with the initial five being convolutional layers and the remaining three being fully connected layers. Notably, AlexNet employs two large kernel convolutions, specifically $11\times11$ and $5\times5$, to achieve a large receptive field.</p>
 <p align="center">
-  <img src="/image/2024-01-17-CNN//AlexNet.bmp" 
+  <img src="/fanglinwanghao/image/2024-01-17-CNN//AlexNet.bmp" 
   alt="Figure 2. Architecture of AlexNet.">
 </p>
 <center>Figure 2. Architecture of AlexNet.</center>
@@ -299,7 +299,7 @@
 <p>This approach offers two advantages. Firstly, it incorporates multiple non-linear rectification layers instead of a single one, enhancing the discriminative power of the decision function. Secondly, it reduces the number of parameters. Additionally, the researchers explored the relationship between neural network depth and performance. Their findings indicate that a significant improvement in prior-art configurations can be achieved by increasing the depth to 16–19 weight layers.</p>
 <h3 id="Architecture-of-VGG"><a href="#Architecture-of-VGG" class="headerlink" title="Architecture of VGG"></a>Architecture of VGG</h3><p>VGG Net shares similarities with AlexNet but differs significantly from it. In contrast to AlexNet, VGG Net replaces large kernel convolutions with small kernel convolutions. In VGG Net, a stack of two $3\times3$ convolution layers (without spatial pooling in between) replaces an effective receptive field of $5\times5$, and three $3\times3$ convolution layers replace $7\times7$.</p>
 <p align="center">
-  <img src="/image/2024-01-17-CNN//VGG.jpg" 
+  <img src="/fanglinwanghao/image/2024-01-17-CNN//VGG.jpg" 
   alt="Figure 3. Architecture of VGG.">
 </p>
 <center>Figure 3. Architecture of VGG.</center>
@@ -312,7 +312,7 @@
 <p>[This name, GoogLeNet, is an homage to Yann LeCuns pioneering LeNet 5 network]</p>
 <h3 id="Architecture-of-Inception"><a href="#Architecture-of-Inception" class="headerlink" title="Architecture of Inception"></a>Architecture of Inception</h3><p>Inception-V1 incorporates $1\times1$, $3\times3$, and $5\times5$ convolutions, along with one $3\times3$ max-pooling layer. Moreover, each large kernel convolution and pooling layer is succeeded by a $1\times1$ convolution, directly reducing dimensions and eliminating computational bottlenecks. Inception-V1 represents an optimal local sparse structure in a convolutional vision network.</p>
 <p align="center">
-  <img src="/image/2024-01-17-CNN//Inception.jpg" 
+  <img src="/fanglinwanghao/image/2024-01-17-CNN//Inception.jpg" 
   alt="Figure 4. Architecture of Inception Module.">
 </p>
 <center>Figure 4. Architecture of Inception Module.</center>
@@ -323,7 +323,7 @@
 <p>[<a href="https://github.com/conan7882/GoogLeNet-Inception" target="_blank">Code in Github(UNOFFICIAL)</a>]</p>
 <h2 id="ResNet-2015"><a href="#ResNet-2015" class="headerlink" title="ResNet - 2015"></a>ResNet - 2015</h2><p>At first glance, it might seem intuitive that deeper networks lead to better performance. However, this is not always the case. As networks grow deeper and begin to converge, a degradation problem emerges: as the network depth increases, accuracy saturates (which may be expected) and then rapidly degrades. Surprisingly, this degradation is not caused by overfitting, and the addition of more layers to a suitably deep model results in higher training error, as illustrated in Fig 5.</p>
 <p align="center">
-  <img src="/image/2024-01-17-CNN/ResultofDeeperNetwork.bmp" 
+  <img src="/fanglinwanghao/image/2024-01-17-CNN/ResultofDeeperNetwork.bmp" 
   alt="Figure 5. Training error (left) and test error (right) on CIFAR-10
 with 20-layer and 56-layer “plain” networks.
 ">
@@ -334,7 +334,7 @@ with 20-layer and 56-layer “plain” networks.</center>
 <p>To overcome this performance bottleneck, Kaiming He proposed ResNet. The Residual learning framework addresses the degradation problem by introducing shortcut connections that perform identity mapping, and their outputs are added to the outputs of the stacked layers. Traditional networks expect layers to follow $H(X) &#x3D; F(X) + x$, but ResNet expects layers to follow $F(x)$. While both forms should theoretically asymptotically approximate the desired functions, the ease of learning may differ.</p>
 <h3 id="Architecture-of-Residual-Learning-Framework"><a href="#Architecture-of-Residual-Learning-Framework" class="headerlink" title="Architecture of Residual Learning Framework"></a>Architecture of Residual Learning Framework</h3><p>The formulation of $F(x) + x$ can be implemented in feedforward neural networks with ‘shortcut connections,’ as illustrated in Fig 6.</p>
 <p align="center">
-  <img src="/image/2024-01-17-CNN//ResNet.jpg" 
+  <img src="/fanglinwanghao/image/2024-01-17-CNN//ResNet.jpg" 
   alt="Figure 6. Architecture of Residual learning framework.">
 </p>
 <center>Figure 6. Architecture of Residual learning framework.</center>
@@ -345,7 +345,7 @@ with 20-layer and 56-layer “plain” networks.</center>
 <h2 id="DenseNet-2017"><a href="#DenseNet-2017" class="headerlink" title="DenseNet - 2017"></a>DenseNet - 2017</h2><p>Residual learning framework brings huge computational overhead and excessive feature redundancy in computation. And researchs show that many layers in ResNet contribute very little and can in fact be randomly dropped during training. Therefore, Gao Huang proposed DenseNet architecture explicitly differentiates between information that is added to the network and information that is preserved. Cleverly designed so that DenseNet require substantially fewer parameters and less computation to achieve state-of-the-art performances.</p>
 <h3 id="Architecture-of-DenseNet"><a href="#Architecture-of-DenseNet" class="headerlink" title="Architecture of DenseNet"></a>Architecture of DenseNet</h3><p>To ensure maximum information flow between layers in the network, DenseNet<br>connect all layers (with matching feature-map sizes) directly with each other. Crucially, in contrast to ResNets, DenseNet never combines features<br>through summation before they are passed into a layer; instead, it combines features by concatenating them.</p>
 <p align="center">
-  <img src="/image/2024-01-17-CNN//DenseNet.bmp" 
+  <img src="/fanglinwanghao/image/2024-01-17-CNN//DenseNet.bmp" 
   alt="Figure 7. Architecture of DenseNet.">
 </p>
 <center>Figure 7. Architecture of DenseNet.</center>
