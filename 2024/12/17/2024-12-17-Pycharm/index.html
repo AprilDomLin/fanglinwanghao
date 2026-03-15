@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="FANG LINWANGHAO">
+
+
+
+
+
+<title>Pycharm Development | FANG LINWANGHAO</title>
+
+
+
+    <link rel="icon" href="/fanglinwanghao/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/fanglinwanghao/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/fanglinwanghao/js/script.js"></script>
+    
+    <script src="/fanglinwanghao/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/fanglinwanghao/">FANG LINWANGHAO</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/fanglinwanghao/pubilcation">Pubilcation</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/archives">Posts</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/tag">Tags</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/fanglinwanghao/">FANG LINWANGHAO</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/fanglinwanghao/pubilcation">Pubilcation</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/archives">Posts</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/tag">Tags</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Pycharm Development</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">FANG LINWANGHAO</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">December 17, 2024&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Pycharm"><a href="#Pycharm" class="headerlink" title="Pycharm"></a>Pycharm</h1><h2 id="Pycharm-Professional"><a href="#Pycharm-Professional" class="headerlink" title="Pycharm Professional"></a>Pycharm Professional</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p>需要下载 2021.02 版本或更低版本的 professional pycharm. <a target="_blank" rel="noopener" href="https://www.jetbrains.com/pycharm/download/other.html">官网下载链接</a></p>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><ol>
+<li><p>下载安装后，会有30天的免费试用期。试用免费试用，进入pycharm professional。</p>
+</li>
+<li><p>点击 setting (快捷键: ctrl + atl + s)，进入插件(Plugins)，点击设置按钮，管理插件仓库(Manage Plugin Repositories)。</p>
+</li>
+</ol>
+<p align="center">
+  <img src="/image/pycharm/fig_01.png" 
+</p>
+
+<p>在仓库源中，加入 <strong><a target="_blank" rel="noopener" href="https://plugins.zhile.io/">https://plugins.zhile.io</a></strong></p>
+<p align="center">
+  <img src="/image/pycharm/fig_08.png" 
+</p>
+
+<ol>
+<li><p>加入源完成后，在市场(Marketplace)中，搜索 <strong>IDE Eval Reset</strong>，并下载。</p>
+<p align="center">
+  <img src="/image/pycharm/fig_02.png" 
+</p>
+
+</li>
+<li><p>设置免费试用重置，reload和reset，即可重置免费期限。<br><strong>！！！注意：超过30天未登陆，可能无法启动重置！！！</strong></p>
+<p align="center">
+  <img src="/image/pycharm/fig_03.png" 
+</p></li>
+</ol>
+<h2 id="Remote-远程"><a href="#Remote-远程" class="headerlink" title="Remote 远程"></a>Remote 远程</h2><h3 id="远程服务器路径"><a href="#远程服务器路径" class="headerlink" title="远程服务器路径"></a>远程服务器路径</h3><p>需要确认远程服务器的python环境，若服务器是anaconda环境，则需要寻找到 .&#x2F;anaconda&#x2F;bin&#x2F;python3.X.exe 的路径(path)</p>
+<h3 id="New-Project"><a href="#New-Project" class="headerlink" title="New Project"></a>New Project</h3><p align="center">
+  <img src="/image/pycharm/fig_04.png" 
+</p>
+
+
+<p>点击新建项目(New Project), 选择纯python项目(Pure Python)。新建python项目</p>
+<h4 id="Python-解释器"><a href="#Python-解释器" class="headerlink" title="Python 解释器"></a>Python 解释器</h4><p>解释器是指 python 的解释器环境。若未配制远程解释器地址，则点就…，进行新建配制。</p>
+<ol>
+<li><p>选择 SSH Interpreter， 在New server configuration中，填写服务器地址(Host)、端口(Port)和用户名(Username)</p>
+<p align="center">
+  <img src="/image/pycharm/fig_05.png" 
+</p>
+</li>
+<li><p>下一步需要输入用户名密码</p>
+</li>
+<li><p>再选择python环境地址，在前序中提及的path。</p>
+</li>
+<li><p>即可完成解释器配制。</p>
+</li>
+</ol>
+<h4 id="远程路径"><a href="#远程路径" class="headerlink" title="远程路径"></a>远程路径</h4><p>配制远程路径(Remote project location)，此路径为python项目在远程服务器中的地址路径。</p>
+<h4 id="本地项目路径"><a href="#本地项目路径" class="headerlink" title="本地项目路径"></a>本地项目路径</h4><p>配制本地项目路径(Location)，此路径为python项目在本地电脑中的地址路径。</p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>在顶部菜单栏中，选择工具(Tools) -&gt; 部署(Deployment)，可以选择自动上传代码(Automatic Upload)——即实时传输本地python代码至远程服务器更新。</p>
+<p align="center">
+  <img src="/image/pycharm/fig_06.png" 
+</p>
+
+<p>也可在Deployment中，选择Browse Remote Host，即可在右侧面板查看远程路径情况。项目所在目录，会有绿色背景高亮提示。若存在问题，可通过上侧 … ，对远程配制信息进行查看和修改。</p>
+<p align="center">
+  <img src="/image/pycharm/fig_07.png" 
+</p>
+
+<p>也可以针对单个文件&#x2F;文件夹，右击选择上传(Upload to <em>@</em>.<em>.</em>)，达到随时上传更新文件。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>FANG LINWANGHAO</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://aprildomlin.github.io/fanglinwanghao/2024/12/17/2024-12-17-Pycharm/">https://aprildomlin.github.io/fanglinwanghao/2024/12/17/2024-12-17-Pycharm/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span></span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/fanglinwanghao/tags/Note/"># Note</a>
+                    
+                        <a href="/fanglinwanghao/tags/Development/"># Development</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/fanglinwanghao/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/fanglinwanghao/2025/04/28/2025-04-27-Cake/">巴斯克</a>
+            
+            
+            <a class="next" rel="next" href="/fanglinwanghao/2024/01/19/2024-01-19-SSH/">SSH tunnel</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© FANG LINWANGHAO | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

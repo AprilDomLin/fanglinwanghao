@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="FANG LINWANGHAO">
+
+
+
+
+
+<title>巴斯克 | FANG LINWANGHAO</title>
+
+
+
+    <link rel="icon" href="/fanglinwanghao/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/fanglinwanghao/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/fanglinwanghao/js/script.js"></script>
+    
+    <script src="/fanglinwanghao/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/fanglinwanghao/">FANG LINWANGHAO</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/fanglinwanghao/pubilcation">Pubilcation</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/archives">Posts</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/tag">Tags</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/fanglinwanghao/">FANG LINWANGHAO</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/fanglinwanghao/pubilcation">Pubilcation</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/archives">Posts</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/tag">Tags</a>
+                
+                    <a class="menu-item" href="/fanglinwanghao/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">巴斯克</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">FANG LINWANGHAO</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">April 28, 2025&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <style>
+  .centered-table th,
+  .centered-table td {
+    text-align: center;
+    vertical-align: middle;
+  }
+</style>
+
+<h1 id="原味巴斯克"><a href="#原味巴斯克" class="headerlink" title="原味巴斯克"></a>原味巴斯克</h1><h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><ol>
+<li><p>隔温水或微波加热，软化<code>奶油奶酪</code>，搅拌细腻。</p>
+</li>
+<li><p>然后加入<code>白糖</code>和<code>玉米淀粉</code>，搅拌均匀，尽可能无结块。</p>
+</li>
+<li><p>多次分批加入 <code>常温鸡蛋</code>，搅拌均匀。</p>
+</li>
+<li><p>最后加入常温<code>淡奶油</code>，混合均匀，过筛，倒入模具中。</p>
+</li>
+<li><table class="centered-table" style="table-layout: fixed; margin-left: auto; margin-right: auto; width: 600px;">
+  <colgroup>
+ <col style="width: 50;">  <!-- 第一列列自适应 -->
+ <col style="width: 300px;"> 
+  </colgroup>
+  <tbody>
+ <tr><td>&#x2610;</td><td>烤箱上下210°C预热，中层烤30min。</td></tr>
+ <tr><td>&#x2610;</td><td>烤箱上下210°C预热，中层烤30min。</td></tr>
+ <tr><td>&#x2610;</td><td>空气炸锅180°C预热，烤15min，再盖锡纸160°C烤10min。</td></tr>
+  </tbody>
+</table>
+</li>
+<li><p>室温放置冷却后，冷藏3小时以上，可冷藏过夜。</p>
+</li>
+</ol>
+<p align="center">
+  <img src="/image/2025-04-27-Cake/fig_01.png" 
+</p>
+
+
+<h2 id="配方"><a href="#配方" class="headerlink" title="配方"></a>配方</h2><table class="centered-table" style="table-layout: fixed; margin-left: auto; margin-right: auto; width: 600px;">
+  <colgroup>
+    <col style="width: auto;">  <!-- 第一列列自适应 -->
+    <col style="width: 150px;">
+    <col style="width: 150px;">   
+  </colgroup>
+  <thead>
+    <tr><th>食材 </th><th>配方A</th><th>配方B</th><th>配方C</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>奶油奶酪</td><td>200g</td><td>200g</td><td>350g</td></tr>
+    <tr><td>白糖</td><td>30g </td><td>30g </td><td>50g</td></tr>
+    <tr><td>蜂糖（补充白糖风味）</td><td>- </td><td>- </td><td>15g</td></tr>
+    <tr><td>玉米淀粉</td><td>8g </td><td>16g </td><td>-</td></tr>
+    <tr><td>低筋面粉（替代玉米淀粉）</td><td>- </td><td>- </td><td>8g</td></tr>
+    <tr><td>鸡蛋</td><td>2个全蛋+1个蛋黄 </td><td>32个 </td><td>3个</td></tr>
+    <tr><td>淡奶油</td><td>150g </td><td>- </td><td>-</td></tr>
+    <tr><td>牛奶（替代淡奶油）</td><td>- </td><td>100g </td><td>200g</td></tr>
+    <tr><td>黄油（替代淡奶油）</td><td>- </td><td>- </td><td>50g</td></tr>
+  </tbody>
+</table>
+
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>FANG LINWANGHAO</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="https://aprildomlin.github.io/fanglinwanghao/2025/04/28/2025-04-27-Cake/">https://aprildomlin.github.io/fanglinwanghao/2025/04/28/2025-04-27-Cake/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span></span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/fanglinwanghao/tags/Note/"># Note</a>
+                    
+                        <a href="/fanglinwanghao/tags/Baking/"># Baking</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/fanglinwanghao/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/fanglinwanghao/2024/12/17/2024-12-17-Pycharm/">Pycharm Development</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© FANG LINWANGHAO | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
